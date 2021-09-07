@@ -1,0 +1,22 @@
+1. 아래를 프로그래밍 하시오.(못 짜면 안되겠져- 무조건 외워 주세요.)
+
+출력
+Hello World
+I am a programer.
+public class HelloWorld {
+
+	public static void main(String[] args) {
+		System.out.println("Hello World!!");
+		System.out.println("I am a progamer.!!");
+	}
+
+}
+2.아래의 하드웨어에 대하여 설명하시오.
+ -CPU : 컴퓨터의 주기억장치입니다.
+ -메모리 : ROM 과 RAM이 있고 컴퓨터의 보조기억장치입니다.
+ -CPU가 2진수만 알아 듣는 이유 : 전기적 신호로 의미를 전달하는 가장 간단한 방법이기 때문입니다.
+
+
+3.OS의 역활은 무엇이며, OS의 종류에는 무엇이 있는가?
+OS의 역할 : 프로세스 관리, 기억장치 관리, 입출력장치 관리, 자원관리로 네가지가 있습니다. 프로그램 관리
+OS의 종류 : Windows, Linux, 데비안, 우분투, SUSE, 슬랙웨어, Unix, Max OS
