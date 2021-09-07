@@ -1,0 +1,59 @@
+1. JVM 에 대하여 설명하시오.(인터넷에서 찾아 보고 한번 정도는 읽어 보세요)
+Java Vitual Machine
+자바 바이트코드를 실행하는 실행기이다.
+
+2. 일반적인 프로그램과 java 가 실행되는 차이점은(오늘 배운 PPT 그림 참고 하세요).
+     일반적인프로그램	       자바프로그램 
+	program			program 출력화면
+      Operating System	       Java Virtual Machine  JVM
+	Hardware                    Operating System 소프트웨어
+				 Hardware  CPU
+
+3. 변수란 무엇인가
+메모리 공간 할당을 하기 위한 도구이다.
+
+4. 변수 선언의 의미는?
+변수에 값을 대입하는 것
+
+5. 들여쓰기를 왜 해야 하는가?
+메소드끼리 구분하기 위해서 사용한다.
+
+6. 주석은 컴파일시 어떻게 되는가?
+연산 결과에 반영 되지않아 프로그램에 영항을 주지 않는다.
+
+7. java의 자료형 9개는?
+boolean, char, byte, short, int, long, float, double, 참조형
+
+8. int num; 을 메모리로 설명해 보시오.
+num변수에 4byte만큼의 공간을 할당해준다.
+
+9. 컴퓨터에서의 음의 정수 표현법은?
+(2의 보수법)
+양의 정수의 이진수에서 0 - >1, 1 - > 0(1의보수)바꾸고 거기에 1을 더한다. 
+
+10. 컴퓨터에서 실수에 오차가 존재 할수 밖에 없는 이유를 설명하시오.
+메모리는 유한적이고 실수는 무한적이기때문에 실수의 범위를 주고 최대값과 최소값을 준 다음에 그 사이에 표현할 수 있는 값을 미리 지정해두고 근사값으로 사용한다
+
+11. -5의 '컴퓨터에서의 2진수 값'을 나타내시오.
+11111011
+
+12. 프로그래밍 문제
+국어 90 영어 70 수학 60점의 평균 및 총합을 출력하시오.
+변수명 유의해서 프로그램 짜주세요.
+출력
+총합 : 220
+평균 : 73.0
+public class Score {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int kor = 90;
+		int eng = 70;
+		int math = 60;
+		int sum = kor + eng + math;
+		double arg = sum / 3;
+		System.out.println("총합 : " + sum);
+		System.out.println("평균 : " + arg);
+	}
+
+}
