@@ -1,0 +1,266 @@
+1.아래의 사칙연산 계산기를 프로그래밍하시오.
+
+출력========================== 
+
+첫 번째 숫자를 입력하세요.
+90
+연산 기호를 입력하세요.
++
+두 번째 숫자를 입력하세요.
+65
+155
+종료하시겠습니까? 종료:y 계속:n
+n
+첫 번째 숫자를 입력하세요.
+90
+연산 기호를 입력하세요.
+-
+두 번째 숫자를 입력하세요.
+56
+34
+종료하시겠습니까? 종료:y 계속:n
+y
+종료입니다.
+
+소스코드
+
+import java.util.Scanner;
+
+
+class Calculate{
+	
+	private int num1;
+	private int num2;
+	private String mathsign;
+	private String check;
+	
+	Scanner sc = new Scanner(System.in);
+	
+	public void MathSign() {
+		
+		if(mathsign.equals("+")) {
+			System.out.println(num1 + num2);
+		}
+		
+		else if(mathsign.equals("-")) {
+			System.out.println(num1 - num2);
+		}
+		
+		else if(mathsign.equals("*")) {
+			System.out.println(num1 * num2);
+		}
+		
+		else if(mathsign.equals("/")) {
+			System.out.println(num1 / num2);
+		}
+	}
+	
+	public void show() {
+		while(true) {
+			System.out.println("첫 번째 숫자를 입력하세요.");
+			num1 = sc.nextInt();
+			
+			System.out.println("연산 기호를 입력하세요.");
+			mathsign = sc.next();		
+			
+			System.out.println("두 번째 숫자를 입력하세요.");
+			num2 = sc.nextInt();	
+			
+			MathSign();
+			System.out.println("종료하시겠습니까? 종료:y 계속:n");
+			check = sc.next();
+			
+			if(check.equals("y") || check.equals("Y")) {
+				System.out.println("종료입니다.");
+				break;
+			}
+			else {
+				continue;
+			}
+		}
+	}
+	
+}
+
+public class LastExam03 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Calculate cal = new Calculate();
+		cal.show();
+	}
+
+}
+
+
+
+2. 랜덤 숫자 맞추기 게임을 짜시오.
+
+남은 횟수 : 10회 에서 시작
+
+1-100사이의 숫자 중에 숫자 맞추기
+
+//아래의 랜덤함수를 사용 할것
+(int)((Math.random()*100)+1); 
+
+==========================
+1~100 사이의 숫자를 입력하세요.
+남은 횟수 : 10
+50
+UP
+남은 횟수 : 9
+65
+UP
+남은 횟수 : 8
+80
+DOWN
+남은 횟수 : 7
+75
+DOWN
+남은 횟수 : 6
+73
+DOWN
+남은 횟수 : 5
+70
+UP
+남은 횟수 : 4
+71
+축하합니다. 7회 만에 맞추셨습니다.
+프로그램을 종료합니다.
+
+소스코드
+
+import java.util.Scanner;
+
+
+
+class Random{
+	
+	private int random = (int) (Math.random() * 100) + 1;
+	private int num;
+	private int count = 10;
+	
+	Scanner sc = new Scanner(System.in);
+	
+	public void show() {
+		System.out.println("1 ~ 100 사이의 숫자를 입력하세요");
+		System.out.println("남은 횟수 : " + count);
+		while(true) {
+			num = sc.nextInt();
+			if(count > 0) {
+				if(random > num) {
+					System.out.println("UP");
+					System.out.println("남은 횟수 : " + count);
+					count--;
+					continue;
+				}
+				else if(random < num) {
+					System.out.println("DOWN");
+					System.out.println("남은 횟수 : " + count);
+					count--;
+					continue;
+				}
+				else {
+					System.out.println("축하드립니다 정답입니다. " + count + "회 만에 맞추셨습니다");
+					System.out.println("종료하겠습니다.");
+					break;
+				}
+			}
+			else {
+				System.out.println("게임에서 졌기 때문에 종료합니다");
+				break;
+			}
+		}
+	}
+}
+
+
+public class LastExam01 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Random random = new Random();
+		random.show();
+	}
+
+}
+
+
+3 . 아래와 같이 출력이 나오도록 프로그래밍 하시오.
+Player 객체를 완성하시오.
+
+main(){
+
+Player p1 = new Player()
+Player p2 = new Player()
+Player p3 = new Player()
+Player p4 = new Player()
+
+System.out.println(Player.instance);
+
+}
+
+출력:
+4
+
+소스코드
+
+class Player{
+	
+	static int instance = 0;
+	
+	public Player() {
+		instance++;
+	}
+}
+
+
+
+public class LastExam04 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Player p1 = new Player();
+		Player p2 = new Player();
+		Player p3 = new Player();
+		Player p4 = new Player();
+		
+		System.out.println(Player.instance);
+	}
+
+}
+
+4. static 변수의 다른 용어 3가지를 말해 보시오.
+
+정적 변수, 공유 변수, class 변수
+
+5. static 변수의 접근 방법은?
+
+1) 인스턴스 이름을 이용한 접근 방법
+
+2) 클래스 이름을 이용한 접근 방법
+
+3) 클래스 내부에서 직접 접근하는 방법
+
+6. 클래스(static) 변수의 활용의 예를 드시오.
+
+1) Math.Pi
+
+2) 객체
+
+7. 스태틱 함수에 인스턴스 라면이 올수 없는 이유는?
+
+static 함수는 객체 안에 없어도 메모리에 이미 자동으로 생성되지만 인스턴스 변수는 객체를 생성해야만 만들어지기 때문이다
+
+8. 인스턴스 함수 안에 static 변수와 함수가 올 수 있는 이유는?
+
+class Player{
+	
+	static int instance = 0;
+	
+	public Player() {
+		instance++;
+	}
+}
+
+static 함수는 객체 안에 없어도 메모리에 이미 자동으로 생성되기 때문에
